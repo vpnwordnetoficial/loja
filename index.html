@@ -527,89 +527,44 @@
     }
 }
       
-.alert-laser {
-    position: relative;
-    width: 300px;
-    padding: 20px;
-    color: #FF6F61;
-    font-weight: bold;
-    border: 2px solid transparent;
-    background-color: #111;
-    text-align: center;
-    font-size: 18px;
-    overflow: hidden;
-    animation: show-alert 2s ease-out forwards;
+    .logo {
+  font-size: 48px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  overflow: hidden;
 }
 
-.alert-laser::before,
-.alert-laser::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #FF6F61; /* cor do laser */
-    left: 0;
-    animation: laser-line 1s ease-in-out forwards;
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  animation: shine 3s infinite;
 }
 
-.alert-laser::before {
-    top: 0; /* linha superior */
-    animation-delay: 0.5s;
-}
-
-.alert-laser::after {
-    bottom: 0; /* linha inferior */
-    animation-delay: 1.5s;
-}
-
-.alert-laser p {
-    position: relative;
-    opacity: 0;
-    animation: reveal-text 2s ease-out forwards;
-    animation-delay: 2s; /* faz o texto aparecer após o efeito do laser */
-}
-
-@keyframes laser-line {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    50% {
-        width: 50%;
-        opacity: 1;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes reveal-text {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes show-alert {
-    0% {
-        border: 2px solid transparent;
-    }
-    100% {
-        border: 2px solid #FF6F61; /* cor final da borda */
-    }
-}
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}  
       
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="alert-laser">
-    <p>Word Streaming Premium</p>
-</div>
+            <div class="logo">Word Streaming Premium</div>
+            <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#planos">Preços Revenda</a></li>
                 <li><a href="#planos-cliente">Preços Cliente</a></li>
