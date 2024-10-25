@@ -156,15 +156,20 @@
             margin-bottom: 30px;
         }
 
-        .hero a {
-            padding: 15px 30px;
-            background-color: rgba(136, 82, 197, 0.5);
-            color: #fff;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
+.hero a {
+    padding: 15px 30px;
+    background-color: rgba(136, 82, 197, 0.6);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(136, 82, 197, 0.6); /* Efeito de luz ao redor do botão */
+}
+
+.hero a:hover {
+    box-shadow: 0 0 20px rgba(136, 82, 197, 0.8), 0 0 30px rgba(136, 82, 197, 0.6); /* Efeito de foco com brilho mais intenso ao passar o mouse */
+}
 
         .hero a:hover {
             background-color: #ff741a;
