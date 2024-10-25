@@ -14,7 +14,1157 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        body {<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loja word oficial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
         body {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        header {
+            background-color: #0d0d0d;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header nav .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #02ff00;
+            margin: 0 auto;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            flex: 1;
+            text-align: center;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        header nav ul li a:hover,
+        header nav ul li a.active {
+            background-color: #ff5200;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            header nav ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #272930;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+                padding: 10px 0;
+                margin: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: transform 0.5s ease, opacity 0.5s ease;
+                visibility: hidden;
+            }
+
+            header nav.nav-active ul {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            header nav ul li a {
+                padding: 15px;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('https://s12.gifyu.com/images/So7m2.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                background: url('https://s11.gifyu.com/images/SOWCC.jpg') no-repeat center center/cover;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+.hero a {
+    padding: 15px 30px;
+    background-color: rgba(176, 95, 235, 0.7);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(95, 216, 235, 9); /* Inicialmente, sem luz */
+}
+
+.hero a:hover {
+    background-color: rgba(176, 95, 235, 0.7);
+    box-shadow: 0 0 20px rgba(95, 216, 235, 0.8), 0 0 40px rgba(95, 216, 235, 0.6); /* Efeito de luz laranja */
+}
+
+        .veja-planos-button {
+            padding: 15px 30px;
+            background-color: #ff5200;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .veja-planos-button:hover {
+            background-color: #ff741a;
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #planos h2,
+        #informacao h2,
+        #dicas h2,
+        #contatos h2,
+        #depoimentos h2,
+        #revenda h2,
+        #suporte h2,
+        #planos-cliente h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        #planos h2::after,
+        #informacao h2::after,
+        #dicas h2::after,
+        #contatos h2::after,
+        #depoimentos h2::after,
+        #revenda h2::after,
+        #suporte h2::after,
+        #planos-cliente h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background-color: #ff5200;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .planos-container {
+            display: flex;
+            flex-direction: column; /* Exibe os planos em coluna por padrão */
+            gap: 25px;
+            margin-top: 30px;
+            align-items: center; /* Centraliza os planos horizontalmente */
+        }
+
+        @media (min-width: 769px) {
+            .planos-container {
+                flex-direction: row; /* Exibe os planos em linha em telas grandes */
+                flex-wrap: wrap; /* Permite quebra de linha se necessário */
+                justify-content: center; /* Centraliza os planos horizontalmente */
+            }
+        }
+
+        .plano {
+            background-color: #262830;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            height: 667px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .plano:hover {
+            transform: scale(1.05);
+        }
+
+        .plano h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ff5200;
+        }
+
+        .plano p.preco {
+            font-size: 18px;
+            color: #02ff00;
+            margin-bottom: 10px;
+        }
+
+        .plano p {
+            font-size: 16px;
+            margin: 5px 0;
+            flex-grow: 1;
+        }
+
+        .plano button {
+            align-self: center;
+            padding: 10px 60px;
+            background-color: #ff5200;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .plano button:hover {
+            background-color: #ff741a;
+        }
+
+        #informacao p,
+        #dicas p,
+        #contatos p {
+            font-size: 16px;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        #revenda {
+            background-color: #132977;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #suporte {
+            background-color: #132977;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #dicas {
+            background-color: #1a1a1a;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #depoimentos {
+            background-color: #000000;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #depoimentos .depoimento {
+            background-color: #132977;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        #depoimentos .depoimento p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .stars {
+            color: #ffcc00;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #0d0d0d;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .contact-icons {
+            margin-top: 20px;
+        }
+
+        .contact-icons a {
+            color: #fff;
+            font-size: 48px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-icons a:hover {
+            color: #ff5200;
+        }
+
+        .revenda-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff5200;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        .revenda-link:hover {
+            background-color: #ff741a;
+        }
+
+        .gift-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #ff5200;
+            cursor: pointer;
+            z-index: 200;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(-30px);
+            background-color: #5e58a5;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 201;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .popup.active {
+            display: block;
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0);
+        }
+
+        .popup h3 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .popup button {
+            padding: 10px 40px;
+            background-color: #ff5200;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .popup button:hover {
+            background-color: #ff741a;
+        }
+
+        .popup .button-group {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;        
+        }         
+      
+  /* efeito de luz verdo presente */
+      @keyframes pulse {
+    0% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff00;
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 160px #00ff00, 0 0 240px #00ff00;
+        transform: scale(1.1);
+    }
+    100% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff00;
+        transform: scale(1);
+    }
+}
+      .texto-borda { /* O melhor em entretenimento de streaming premium original das melhores plataformas, se for revender lucro de 100% a 250% */
+    color: white; /* Cor do texto */
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; /* Cria a borda preta */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Word Streaming Premium</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#planos">Preços</a></li>
+                <li><a href="#informacao">Informação</a></li>
+                <li><a href="#revenda">Revenda</a></li>
+                <li><a href="#dicas">Dicas revenda</a></li>
+                <li><a href="#suporte">Suporte</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1><!-- aqui ficar um nome maior mais para aparecer tem que apagar tudo aqui dentro de uma seta a outra ai só colocar o seu que vc quiser por exemplo assinatura original --></h1>
+            <p class="texto-borda">O melhor em entretenimento de streaming premium original das melhores plataformas, se for revender lucro de 100% a 250%</p>
+            <a href="#planos">tabela de preços</a><br><br><br><br>
+
+    </section>
+
+    <!-- Seção de Planos -->
+    <section id="planos">
+        <h2>preços cliente e revenda</h2>
+        <div class="planos-container">
+          
+        <!-- internet ilimitada -->
+        <div class="plano">
+            <h3>cliente internet ilimitada</h3>
+            <p class="preco">R$10/1 Login<br>R$15/2 Login<br>R$20/4 Login</p>
+            <p>Internet ilimitada com VPN é uma combinação poderosa para usuários que desejam mais privacidade, segurança e liberdade online.</p>
+            <p>📲 pegar: iphone, android, pc, tv etc</p>          
+            <p>📶 pegar 3g, 4g, 5g</p>     
+            <p>🎁 teste grátis 3 horas uma vez por dia</p>
+            <p>📆 duração do login: 30 dias</p>          
+            <p>🙋🏻‍♂️ usuario: vocês escolher</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano internet ilimitada.'">Assinar</button>
+        </div>   
+
+        <!-- internet ilimitada -->
+        <div class="plano">
+            <h3>revenda internet ilimitada</h3>
+            <p class="preco">R$35/10 Login promoção</p>
+            <p>Internet ilimitada com VPN é uma combinação poderosa para usuários que desejam mais privacidade, segurança e liberdade online.</p>
+            <p>💭 1 aplicativo pra você com sua logo, nome do se app, papel de parede, sua rede social, os credito dura por 30 dias</p>
+            <p>📲 pegar: iphone, android, pc, tv etc</p>          
+            <p>📶 pegar 3g, 4g, 5g</p>
+            <p>🤖 não tenho painel duvidas leia abar de revenda</p>             
+            <p>🎁 teste grátis quando quiser</p>
+            <p>📆 duração de cada login: 30 dias</p>          
+            <p>🙋🏻‍♂️ usuario: vocês escolher</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano internet ilimitada.'">Assinar</button>
+        </div>   
+       
+        <!-- claro tv -->
+        <div class="plano">
+            <h3>Caro tv + reality da globo + canais globo</h3>
+            <p class="preco">R$10,00/tela cliente<br>R$10,00/tela revenda</p>
+            <p>Claro tv+ com 120+ canais — O App Claro tv+ vem com todos os canais que você ama. São mais de 120 canais. No App Claro tv+ você assiste aos melhores filmes e séries de onde estiver. Globo play incluso como reality show os canais.</p>
+            <p>📧 1 tela claro tv ativação via código apenas tv</p>
+            <p>Streaming em HD e 4K</p>            
+            <p>Telas Simultâneas: 1</p>
+            <p>Perfis Suportados: 1</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano claro tv + globo play e canais.'">Assinar</button>
+        </div>
+
+        <!-- Disney Premium -->
+        <div class="plano">
+            <h3>Disney + star + espn</h3>
+            <p class="preco">R$15,00/conta cliente<br>R$15,00/conta revenda</p>
+            <p>Plano platinum</p>
+            <p>O Disney+ é um serviço de streaming da The Walt Disney Company que oferece uma ampla variedade de conteúdo de entretenimento para todas as idades e todos canais ao vivo espn</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4K</p>            
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 7</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Disney Premium.'">Assinar</button>
+        </div>
+
+        <!-- Max Premium -->
+        <div class="plano">
+            <h3>Max + discovery + futebol ao vivo</h3>
+            <p class="preco">R$15,00/conta cliente<br>R$15,00/conta revenda</p>
+            <p>Plano platinum</p>
+            <p>A Max é uma plataforma de streaming que oferece uma grande variedade de conteúdo, incluindo filmes, séries, documentários, programas de culinária, reality shows, novelas e muito mais.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Max Premium.'">Assinar</button>
+        </div>
+
+        <!-- Unitv -->
+        <div class="plano">
+            <h3>Unitv iptv</h3>
+            <p class="preco">R$20,00/conta cliente<br>R$10,00/conta revenda</p>
+            <p>Catálogo todos canais fechado e canais adulto e todas assinatura dentro de uma só assinatura</p>
+            <p>você já tem e-mail dessa assinatura? -eu recarrego</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 2</p>
+            <p>A Unitv não oferece a funcionalidade de criar perfis</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano unitv.'">Assinar</button></div>
+          
+        <!-- Youcine -->
+        <div class="plano">
+            <h3>Youcine iptv</h3>
+            <p class="preco">R$20,00/conta cliente<br>R$10,00/conta revenda</p>
+            <p>Catálogo todos canais fechado e canais adulto e todas assinatura dentro de uma só assinatura</p>
+            <p>você já tem e-mail dessa assinatura? -eu recarrego</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>A youcine não oferece a funcionalidade de criar perfis</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano youcine.'">Assinar</button>
+        </div>
+
+        <!-- Apple TV -->
+        <div class="plano">
+            <h3>Apple TV</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>O Apple TV+, serviço de streaming original da Apple com filmes, séries e documentários. O Apple TV+ tem produções novas todos os meses, sem anúncios, e pode ser acessado por Smart TVs e reprodutores de streaming.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Apple TV.'">Assinar</button>
+
+        </div>
+        <!-- Brasileirinhas -->
+        <div class="plano">
+            <h3>Brasileirinhas</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>As Brasileirinhas ✓ tem os melhores vídeos pornô com trailer grátis com as melhores atrizes brasileirinhas do pornô, entre e confira as brasileirinhas!</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 2</p>
+            <p>Perfis Suportados: brasileirinha não oferece a funcionalidade de criar perfis</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Brasileirinhas.'">Assinar</button>
+        </div>
+
+        <!-- Paramount Premium -->
+        <div class="plano">
+            <h3>Paramount + futebol</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>Plano platinum</p>
+            <p>O Paramount+ é um serviço de streaming de vídeo sob demanda que oferece uma ampla variedade de conteúdo, incluindo séries originais, filmes, programas de TV clássicos, transmissões ao vivo de esportes e notícias.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Paramount Premium.'">Assinar</button>
+        </div>
+
+        <!-- Crunchyroll Premium -->
+        <div class="plano">
+            <h3>Crunchyroll</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>A Crunchyroll é um serviço de streaming americano especializado em animes e mangás, fundado em 2006 e pertencente ao grupo Sony. A plataforma é conhecida por sua vasta biblioteca de títulos japoneses, oferecendo tanto versões legendadas quanto dubladase</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Crunchyroll Premium.'">Assinar</button>
+        </div>
+
+        <!-- Viki Rakuten Premium -->
+        <div class="plano">
+            <h3>Viki Rakuten</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>A Viki é um serviço de streaming que distribui conteúdos midiáticos, principalmente da Ásia, como séries de televisão, filmes e programas de variedades. A plataforma está disponível no Brasil, tanto no computador como em smartphones e smart TVs</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Viki Rakuten Premium.'">Assinar</button>
+        </div>
+
+        <!-- Mubi Filmes -->
+        <div class="plano">
+            <h3>Mubi Filmes</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>O MUBI é uma plataforma de streaming que disponibiliza filmes clássicos, produções de festivais de cinema e outras obras. A plataforma também oferece uma curadoria especializada, com textos sobre cineastas e estreias.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 1</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Mubi Filmes.'">Assinar</button>
+        </div>
+          
+        <!-- danz -->
+        <div class="plano">
+            <h3>Danz</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>A DAZN é um serviço de streaming de assinatura que transmite eventos esportivos ao vivo e sob demanda futebol, mma, box, uefa, Championship, Fórmula E Tênis, dardosc seria e etc</p>
+            <p>nesse momento ela renova mais eu não renovo</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4K</p>            
+            <p>Telas Simultâneas: 5</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o danz.'">Assinar</button>
+        </div>
+          
+        <!-- Play Plus Premium -->
+        <div class="plano">
+            <h3>Play Plus</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda'</p>
+            <p>O PlayPlus é uma plataforma de streaming de conteúdo audiovisual da Rádio e Televisão Record. O serviço oferece uma variedade de produtos, incluindo: Novelas, Séries, Jornalismo, Realities, Programas de auditório, Variedades, Séries de reportagens, Produções históricas, Podcasts, Programas exclusivos.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Play Plus Premium.'">Assinar</button>
+        </div>
+          
+        <!-- UOL Play + Canais -->
+        <div class="plano">
+            <h3>UOL Play Canais e espn</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$7,00/conta revenda</p>
+            <p>Conta com dezenas de canais que transmitem programação ao vivo, como: Warner, AXN, Sony, History, Paramount+, MTV, BandSports, Comedy Central, Lifetime, Nickelodeon, A&E, Agro+, Arte1, Terraviva.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD ou 4k</p>
+            <p>Telas Simultâneas: 4</p>
+            <p>Perfis Suportados: 4</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano UOL Play + Canais.'">Assinar</button>
+        </div>
+          
+        <!-- Zapping -->
+        <div class="plano">
+            <h3>Zapping full</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$10,00/conta revenda</p>
+            <p>Zapping é um aplicativo para assistir TV ao vivo, 100% online, em qualquer lugar do Brasil. A Zapping está reinventando a experiência de assistir TV ao vivo com Transmissão do Brasileirão Séries A e B, Copa do Brasil e dos principais estaduais do Brasil.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD ou 4k</p>
+            <p>Telas Simultâneas: 5</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Zapping.'">Assinar</button>
+        </div>
+          
+        <!-- Zapping + Premiere -->
+        <div class="plano">
+            <h3>Zapping full + Premiere</h3>
+            <p class="preco">R$20,00/conta cliente<br>R$15,00/conta revenda</p>
+            <p>Zapping e assinatura première já incluso é um aplicativo para assistir TV ao vivo, 100% online, em qualquer lugar do Brasil. A Zapping está reinventando a experiência de assistir TV ao vivo com Transmissão do Brasileirão Séries A e B, Copa do Brasil e dos principais estaduais do Brasil.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD ou 4k</p>
+            <p>Telas Simultâneas: 5</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Zapping + Premiere.'">Assinar</button>
+        </div>
+          
+        <!-- Zapping + Outras -->
+        <div class="plano">
+            <h3>Zapping + Outras</h3>
+            <p class="preco">R$XX,XX/mês</p>
+            <p>você pode escolher entre algumas dessas assinatura telecine, canais adulto, premiere, nosso futebol e combate pra fazer orçamento</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD ou 4k</p>
+            <p>Telas Simultâneas: 5</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Zapping + Outras.'">Assinar</button>
+        </div>
+          
+        <!-- Prime Video -->
+        <div class="plano">
+            <h3>Prime Video</h3>
+            <p class="preco">R$8,00/conta cliente<br>R$8,00/conta revenda</p>
+            <p>Este oferece programas de televisão e filmes. Títulos selecionados são oferecidos gratuitamente para os clientes com assinatura na Amazon</p>
+            <p>se for para renovar mesmo e-mail ativação código apenas TV, se não for eu envio e-mail e senha</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Prime Video.'">Assinar</button>
+        </div>
+          
+        <!-- Prime Video + Premiere -->
+        <div class="plano">
+            <h3>Prime Video + Première</h3>
+            <p class="preco">R$10,00/tela cliente<br>R$7,00/tela revenda<br>R$20,00/conta ambas</p>
+            <p>iincluído première assinatura mais querida pra quem gosta de futebol já dentro do prime vídeo Este oferece programas de televisão e filmes Títulos selecionados são oferecidos gratuitamente para os clientes com assinatura na Amaz</p>
+            <p>ativação apenas tv via código</p>
+            <p>⚠️ se comprar conta pode ativar quantos dispositivos quiser</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Prime Video + Premiere.'">Assinar</button>
+        </div>
+
+        <!-- Prime Video + Premiere + Combate -->
+        <div class="plano">
+            <h3>Prime Video + Première + Combate</h3>
+            <p class="preco">R$10,00/tela cliente<br>R$7,00/tela revenda<br>R$20,00/conta (ambas)</p>
+            <p>incluindo combate incluído première assinatura mais querida pra quem gosta de futebol já dentro do prime vídeo Este oferece programas de televisão e filmes Títulos selecionados são oferecidos gratuitamente para os clientes com assinatura na Amazon</p>
+            <p>ativação apenas tv via código</p>            
+            <p>⚠️ conta pode ativar quantos dispositivos, tela apenas 1</p>
+            <p>⚠️ assinatura combate é brinde logico se eu estiver </p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Prime Video + Premiere + Combate.'">Assinar</button>
+        </div>
+
+        <!-- Prime Video + Outras -->
+        <div class="plano">
+            <h3>Prime Video + Outras</h3>
+            <p class="preco">R$XX,XX/apenas conta(tv)</p>
+            <p>são mais de 20 assinatura dentro do prime vídeo monte seu prime dentro do prime video tem Paramont, Telecine, Max, Mgm, Look, Crunchyroll, Sony on, Premiere, Adrenalina pura, Discovery, Universal, Mubi, Reserva imovision, Cindie, Stingray, Box Brasil play, Curtan, Globo canais, Aquarius, Play kids, Love nature, Combate, Arte1 premium, Nfl game pass, Nba pass</p>
+            <p>ativação apenas tv via codigo</p>
+            <p>💬 conta pode ativar quantos dispositivos, não vendo tela apenas conta</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Prime Video + Outras.'">Assinar</button>
+        </div>
+
+        <!-- Globo Play -->
+        <div class="plano">
+            <h3>Globo Play</h3>
+            <p class="preco">R$7,00/tela cliente<br>R$7,00/tela revenda</p>
+            <p>Novelas ao vivo, internacionais e antigas, Originais Globo play, séries e filmes nacionais a internacionais, reality show</p>
+            <p>ativação via convite em seu e-mail ou meu</p>
+            <p>📧 convite pode acessar onde quiser mais lembre que é apenas 1 dispositivo Simultâneo</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 1</p>
+            <p>Perfis Suportados: 1</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Globo Play.'">Assinar</button>
+        </div>
+
+        <!-- Globo Play + Canais -->
+        <div class="plano">
+            <h3>Globo Play + Canais</h3>
+            <p class="preco">R$10,00/tela cliente<br>R$10,00/tela revenda</p>
+            <p>Assista aos 27 canais ao vivo Novelas ao vivo, internacionais e antigas, Originais Globo play, séries e filmes nacionais a internacionais, reality show</p>
+            <p>via convite em seu e-mail ou meu</p>
+            <p>📧 convite pode acessar onde quiser mais lembre que é apenas 1 dispositivo Simultâneo</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 1</p>
+            <p>Perfis Suportados: 1</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Globo Play + Canais.'">Assinar</button>
+        </div>
+
+        <!-- Globo Play + Canais + Telecine -->
+        <div class="plano">
+            <h3>Globo Play + Canais</h3>
+            <p class="preco">R$15,00/tela cliente<br>R$15,00/tela revenda</p>
+            <p>incluir assinatura telecine e  os canais telecine e também Assista aos 27 canais ao vivo Novelas ao vivo, internacionais e antigas, Originais Globo play, séries e filmes nacionais a internacionais, reality show</p>
+            <p>ativação via convite em seu e-mail ou meu</p>
+            <p>📧 convite pode acessar onde quiser mais lembre que é apenas 1 dispositivo Simultâneo</p>
+            <p>Streaming em HD e 4K</p>
+            <p>Telas Simultâneas: 1</p>
+            <p>Perfis Suportados: 1</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Globo Play + Canais + Telecine.'">Assinar</button>
+        </div>
+
+        <!-- Sky -->
+        <div class="plano">
+            <h3>Sky</h3>
+            <p class="preco">R$10,00/conta cliente<br>R$10,00/conta revenda</p>
+            <p>A SKY+ + de 70 canais é um serviço de streaming da SKY que permite assistir a canais ao vivo, filmes, séries e outros conteúdos on demand. Alguns dos canais disponíveis na SKY+ são: NSports, DSports, SporTV, ESPN, Sony Movies, Space, Warner Channel, Paramount, MEgapix, Sony.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Sky.'">Assinar</button>
+        </div>
+
+        <!-- Sky + Premiere + ESPN -->
+        <div class="plano">
+            <h3>Sky + Premiere + ESPN</h3>
+            <p class="preco">R$15,00/conta cliente<br>R$20,00/conta revenda</p>
+            <p>vai ja incluso assinatura première e espn A SKY+ + de 70 canais é um serviço de streaming da SKY que permite assistir a canais ao vivo, filmes, séries e outros conteúdos on demand. Alguns dos canais disponíveis na SKY+ são: NSports, DSports, SporTV, ESPN, Sony Movies, Space, Warner Channel, Paramount, MEgapix, Sony.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Sky + Premiere + ESPN.'">Assinar</button>
+        </div>
+
+        <!-- Sky + Outras -->
+        <div class="plano">
+            <h3>Sky + Outras</h3>
+            <p class="preco">R$XX,XX/conta</p>
+            <p>monte do seu jeito SKY+ tem essas assinatura dentro max, ufc pass, nosso futebol, première, combate, espn, telecine, paramont</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Streaming em HD e 4k</p>
+            <p>Telas Simultâneas: 3</p>
+            <p>Perfis Suportados: 5</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Sky + Outras.'">Assinar</button>
+        </div>
+
+        <!-- YouTube Premium -->
+        <div class="plano">
+            <h3>YouTube Premium</h3>
+            <p class="preco">R$3,00/cliente família ou individual (ambas)</p>
+            <p>O YouTube Premium é um serviço de assinatura que oferece diversos benefícios, como: 
+Acesso a vídeos sem anúncios, Possibilidade de assistir conteúdos offline, Acesso ao YouTube Music Premium, 
+Recursos como "Tocar em segundo plano" e modo somente áudio, Seleção de filmes e programas de TV sem anúncios </p>
+            <p>R$3,00 com seu gmail virgem ou R$10,00 com meu gmail virgem</p>
+            <p>Telas Simultâneas: N/A</p>
+            <p>Perfis Suportados: 1</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano YouTube Premium.'">Assinar</button>
+        </div>
+
+        <!-- Spotify Premium -->
+        <div class="plano">
+            <h3>Spotify Premium</h3>
+            <p class="preco">R$3,00/individual (ambas) <br>R$5,00/individual (ambas)<br>R$7,00/individual (ambas)</p>
+            <p>Streaming de música</p>
+            <p>1 2 3 mês vai depende se tenho geralmente tenho 1 ou 2 mês</p>
+            <p>Telas Simultâneas: N/A</p>
+            <p>Perfis Suportados: 6 (em plano familiar)</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o plano Spotify Premium.'">Assinar</button>
+        </div>
+
+        <!-- Canva Pro -->
+        <div class="plano">
+            <h3>Canva Pro</h3>
+            <p class="preco">R$3,00/conta cliente<br>>R$3,00/conta revenda</p>
+            <p>A assinatura Canva Pro é um plano de pagamento do editor online Canva que dá acesso a recursos premium, como modelos, itens de mídia e removedor de fundo. O Canva é gratuito, mas o Canva Pro é ideal para quem quer criar conteúdo e designs profissionais com mais facilidade.</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Telas Simultâneas: N/A</p>
+            <p>Perfis Suportados: 1</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o Canva Pro.'">Assinar</button>
+        </div>
+
+        <!-- Microsoft Office -->
+        <div class="plano">
+            <h3>Microsoft Office</h3>
+            <p class="preco">R$3,00/conta cliente<br>>R$3,00/conta revenda</p>
+            <p>A assinatura Microsoft 365, anteriormente conhecida como Office 365, oferece acesso aos aplicativos de produtividade da Microsoft, além de armazenamento na nuvem, segurança digital e suporte técnico</p>
+            <p>✅ conta pode compartilhar</p>
+            <p>Telas Simultâneas: N/A</p>
+            <p>Perfis Suportados: 6</p>
+            <button onclick="window.location.href='https://wa.me/message/XLXD57FM4OZHN1?text=Olá, gostaria de assinar o Microsoft Office.'">Assinar</button>
+        </div>
+    </div>
+</section>
+ 
+    <!-- Seção de Informação -->
+    <section id="informacao">
+        <h2>leia com atenção</h2>
+        <p>Como você pode ter visto temos conta, tela tv, convite!!! conta ideal para você compartilhar com amigos, família, vizinhos, “etc”! Também temos tela ideal para você apenas um dispositivo. Também temos ativação via código apenas para dispositivos TV. e também temos convite pode ser em seu e-mail em sua conta caso não tenha eu faço uma. Dúvidas sobre qual assinatura é conta, tela, tela, TV ou convite basta ver tabela de cada assinatura que tem tudo sobre.<br><br>Nosso serviço oferece uma variedade de assinatura ORIGINAL para todas as idades. 
+        Com opções de planos para diferentes perfis, você pode escolher o que melhor se adapta às suas necessidades de venda.
+        Garantimos suporte durante 30 dias</p>
+        <p>Experimente revender e tenha uma grana extra sem sair casa, vendendo dai mesmo onde você está agora deitado, assistindo, trabalhando, balada você faiz venda.</p>
+    </section>
+
+    <!-- Seção de Revenda -->
+    <section id="revenda">
+        <h2>você revenda leia</h2>
+        <p>INTERNET ILIMITADA<br>
+Você quer revender internet? Se sim! Você tem direito teste grátis todos os dias ao um aplicativo próprio com seu nome, logo, papel de parede, etc. <br><br>
+
+Resumo e como se eu fosse painel! Se não lhe agrada, então não revende.<br><br>
+
+Com e revenda da internet? Você pagar xx$ reais tem 30 dias para vender, mais se eu vender apenas 5 login? Então completou 30 dias se ficar algum login que não vendeu perde! Aí tem que pagar xx$ reais para ter mais xx login e 30 dias para vender. E como se eu fosse painel, não tem erro. <br><br>
+
+E se eu vender um login dia 29 ou dia 30? Serio que tenho que responder? Mais tudo bem responderei não importa o dia que você vender serão 30 dias de internet ilimitada para seu cliente. Duvidas pergunte.<br><br>
+
+ASSINATURA ORIGINAL<br>
+Que levantar um dinheiro extra em assinatura original? 
+Não esqueça de ver aba de dicas para ter um sucesso espetacular e venda todos os dias. Para ser uma revenda não é só dizer que é revenda você tem que está qualificado exemplos abaixo.<br><br>
+
+📢 — Para Você comprar preço de revenda tem que fazer mínimo 7 vendo durante o mês, ai, sim, você está qualificado para comprar preço de revenda, tem que manter o ritmo das vendas, O mínimo são 5 venda por mês, isso é nada! Em breve aumentarei, se você não faz venda ou não comprar mínimo de 7 assinatura por mês então não persista comprar preço de revenda OK! Obrigado e vamos prosperar.<br><br>          
+          
+Nunca vendeu? Para você que não sabe, a pessoa compra para vender telas.
+Por exemplo, compra uma conta Disney tem 4 telas simultâneas significa que pode vender para 4 pessoa há 5 reais tela lucrando 10$ isso é apenas um exemplo! Você vende pelo seu preço que achar melhor.<br><br>
+
+ E se cliente quiser conta oque devo fazer? — Ué, serio que tenho que explicar?
+Exemplo compre conta Disney por 10$ e vende ha 17$ já lucrar 7$  isso é apenas um exemplo! Você vende pelo seu preço que achar melhor. <br><br>          
+
+Tenho dicas aqui no site, procure aba de dicas e tenha de 10 ha 25 venda por dia.<br><br>
+      
+Organização: você que revende não esqueça de organizar suas venda, data, e-mail, senha em um bloco de nota ou folha “etc” sempre que comprar. <br><br>
+
+Organização: você que revende não esqueça de avisar seu cliente um dia antes de vencer, é recomendado pagar um dia antecipado de completar 30 dias, vale lembrar que são 30 dias e não 31 assim você agilizar seus pagamento e não tem perigo assinatura ser trocado a senha etc, mais sempre que poder eu aviso a data.</p>
+        <a href="https://wa.me/message/XLXD57FM4OZHN1" class="revenda-link" target="_blank">comprar agora</a>
+    </section>
+
+    <!-- Seção de Dicas -->
+    <section id="dicas">
+        <h2>dicas pra lucrar 1000%</h2>
+        <p>Aqui estão algumas dicas valiosa, grátis e sem falhas para você ter um grande sucesso de vendas todos os dias.<br><br>
+• Dica 1: criar Facebook todo dia um não custa nada, levar 5 minutos para criar, para quer isso de criar Facebook? Você deve esta se perguntando, simplesmente para fazer divulgação quanto mais o Facebook antigo melhor é tem gente que vende Facebook antigo por $ 100 ha $ 300 você criando já não terá gasto. Recomendo fazer pelo menos uma publicação no marketplace Facebook faça uma edição na foto nome sem muita atenção discreto para ser aprovado pelo marketplace eito isso produto foi aprovado já fará outro Facebook e fazer outra publicação porque Facebook ele só deixa fazer uma publicação por Facebook novo assim você vai criando vários e sempre terá mais e mais para publicar, se você já tem um Facebook já usado antigo melhor ainda mais esse antigo recomendo método 2 logo abaixo.<br><br>
+• Dica 2: tenha Facebook antigo? Vamos lá tenha WhatsApp Business não só um WhatsApp tenha vários pelo menos uns 2 como faz para ter 2 ou mais WhatsApp Business tem vídeo YouTube, vamos lá criou uma conta WhatsApp Business criar uma edição nas fotos que você quer publicar em seu catálogo criar tudo bonito e chamativo depois que é aprovado aguarde uns minutos para você publicar catálogo da sua escolha… escolheu oque quer publicar? Então faça oque pede chegará uma parte para você conectar em seu Facebook. Chegará uma parte também para pagar custa $ 6 real dia mais você pode montar do seu jeito quantos dias quer, quanto tem para gastar, etc. faça pagamento via PIX ou cartão e seja feliz. “ Se você arrumar 2 venda com 6 reais gasto você já vai apurar o dinheiro que gastou e já terá dinheiro para fazer outra publicação, assim você vai criando uma bola de neve de cliente que chegará um dia que você não vai mais gastar porque já terá muito clientes.<br><br>
+• Dica 3: publique OLX também<br><br>
+• Dica 4: compre uma impressora usada ou nova para fazer seus cartão e saia entregando nas ruas, centro da cidade, etc.<br><br>
+• Dica 5: faça promoção, por exemplo, chamou um amigo ganhar uma tela grátis<br><br><br>
+existem muito outros meio de divulgação, faça isso quando você for ver já estará ganhando $ 200 a $ 300 por dia terá hora que você vai nem mais querer novos cliente!  
+</p>
+    </section>
+
+    <!-- Seção de Suporte -->
+    <section id="suporte">
+        <h2>sobre nosso suporte</h2>
+        <p>Você revende? Antes de entrar em contato veja com seu cliente oque foi e verifique o erro 80% das vezes você mesmo consegue resolver<br><br> Precisa de ajuda? Estamos aqui para apoiar você. Nosso suporte está disponível 24/7 para responder suas dúvidas
+        e resolver qualquer problema técnico.</p>
+        <p>Para mais informações ou dúvidas frequentes, visite nossa whatsapp ou grupo telegram</p>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section id="depoimentos">
+        <h2>depoimentos de cliente</h2>
+        <div class="depoimento">
+            <p>"O serviço é incrível! É excelente e a equipe de suporte é muito eficiente. Recomendo a todos!"</p>
+            <div class="stars">
+                ★★★★☆
+            </div>
+            <p>- a Braba das Tela.</p>
+        </div>
+
+        <div class="depoimento">
+            <p>"A melhor experiência que já tive. O plano Premium vale cada centavo! Assinatura original é outro nível!"</p>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>- João.</p>
+        </div>
+        <div class="depoimento">
+            <p>"Ótimo custo-benefício e uma variedade impressionante de conteúdo original. Estou muito satisfeito, já levando uma grana extra faz um bom tempo!"</p>
+            <div class="stars">
+                ★★★★☆
+            </div>
+            <p>- Solsa.</p>
+        </div>
+
+        <div class="depoimento">
+            <p>"Os planos são muito acessíveis, serviço é de primeira. Recomendo para quem ama streaming original."</p>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>- Streaming Telas premium.</p>
+        </div>
+
+        <div class="depoimento">
+            <p>"Excelente serviço e suporte. Não troco por nada!"</p>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>- Morais Streaming.</p>
+        </div>
+
+        <div class="depoimento">
+            <p>"Eu já lucro de $ 100 ha $ 200 por dia, parece difícil mais depois que tem um bolo de cliente e sabendo atender, tendo paciência e as dicas que ele ensinou! Nunca mais larguei as venda só não lucrar quem não quer!"</p>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>- Rei das tela Streaming.</p>
+        </div>
+
+        <div class="depoimento">
+            <p>"Não revendo, sou apenas cliente para uso próprio, espero que ele coloque meu comentário no site haha… sempre compro com ele “Canva pro” para minhas edições, aplicativo pirata só dar problema além dos riscos de ser clonado, raqueado por isso compro assinatura original sem corre risco."</p>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>- usuário antigo.</p>
+        </div>
+
+        <div class="depoimento">
+            <p>"Não exite outro melhor! Já compro um tempo se exite outro melhor é fake Word net o melhor, minha reclamação é porque deveria escura áudio.."</p>
+            <div class="stars">
+                ★★★☆☆
+            </div>
+            <p>- anonimo.</p>
+        </div>
+
+              <div class="depoimento">
+            <p>"Já indiquei é já comecei vender."</p>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>- vendendor novato.</p>
+        </div>
+    </section>
+  
+<!-- Seção de Contatos -->
+<section id="contatos">
+    <h2>Contatos e rede social</h2>
+    <p>Entre em contato conosco através dos seguintes meios:</p>
+    <p>Whatsapp: (85) 9 9722-7519 apenas mensagem inscrita! não mande audio!</p><br>
+    <p>Endereço: Natal, RS</p>
+    <div class="contact-icons">
+        <a href="https://wa.me/message/XLXD57FM4OZHN1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/vpnwordnetdono" target="_blank"><i class="fab fa-telegram"></i></a>
+    </div>
+</section>
+  
+   <!-- Outras seções da página -->
+
+    <i class="fas fa-gift gift-icon"></i>
+
+    <div class="popup" id="popup">
+        <h3>🎁 promoção top relâmpago!<br><br>🙋🏻‍♂️ apenas para novos cliente <br><br>🛍️ 1 assinatura Paramount platinum (conta ) <br><br> 🛍️ 1 assinatura Crunchyroll (conta) <br><br> 💰 tudo por 12,00$ <br><br>🧭 promoção por tempo indeterminado.<br><br>❓ COMPRAR AGORA?</h3>
+        <div class="button-group">
+            <button onclick="aceitarPresente()">Sim</button>
+            <button onclick="recusarPresente()">Não</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Todos os direitos reservados &copy; 2019-2024 word assine e vpn word net</p>
+    </footer>
+
+    <script>
+        // Mostrar popup
+        function mostrarPopup() {
+            document.getElementById('popup').classList.add('active');
+        }
+
+        // Fechar popup
+        function closePopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
+
+        // Aceitar presente
+        function aceitarPresente() {
+            window.location.href = 'https://wa.me/message/XLXD57FM4OZHN1'; // Substitua pelo número de telefone desejado
+        }
+
+        // Recusar presente
+        function recusarPresente() {
+            closePopup();
+        }
+
+        // Ao clicar no ícone de presente, mostra o popup
+        document.querySelector('.gift-icon').addEventListener('click', mostrarPopup);
+    </script>
+  
+    <script>
+        // JavaScript para interatividade
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('header nav');
+            const navLinks = document.querySelectorAll('header nav ul li a');
+
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+            });
+
+            // Adiciona funcionalidade para esconder o menu após clicar em um item
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        nav.classList.remove('nav-active');
+                    }
+                    // Adiciona a classe 'active' ao item clicado
+                    navLinks.forEach(a => a.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
             background-color: #1a1a1a;
             color: #fff;
         }
