@@ -166,31 +166,32 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    z-index: 1;
+    box-shadow: 0 0 10px rgba(136, 82, 197, 0.4);
 }
 
 .hero a::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(136, 82, 197, 0.6), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease, opacity 0.3s ease;
     opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: rotate(45deg);
     z-index: -1;
 }
 
 .hero a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-    transform: rotate(0deg);
 }
 
 .hero a:hover {
-    background-color: rgba(136, 82, 197, 0.9);
-    box-shadow: 0 0 15px rgba(136, 82, 197, 0.8), 0 0 30px rgba(136, 82, 197, 0.5);
+    box-shadow: 0 0 20px rgba(136, 82, 197, 0.7), 0 0 40px rgba(136, 82, 197, 0.5);
+    background-color: rgba(136, 82, 197, 0.85);
 }
 
         .veja-planos-button {
