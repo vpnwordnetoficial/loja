@@ -1107,7 +1107,6 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
         document.querySelector('.gift-icon').addEventListener('click', mostrarPopup);
     </script>
   
-      // script neve caindo
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const snowContainer = document.createElement("div");
@@ -1130,7 +1129,7 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
             snowflake.style.backgroundColor = "#fff";
             snowflake.style.borderRadius = "50%";
             snowflake.style.opacity = Math.random();
-            snowflake.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+            snowflake.style.animation = `fall ${Math.random() * 5 + 5}s linear infinite`; // Mais lento
             snowContainer.appendChild(snowflake);
 
             snowflake.addEventListener("animationend", function() {
@@ -1138,7 +1137,7 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
             });
         }
 
-        setInterval(createSnowflake, 500); // Ajuste a frequência aqui
+        setInterval(createSnowflake, 600); // Frequência ajustada para menor densidade
         const style = document.createElement("style");
         style.innerHTML = `
             @keyframes fall {
@@ -1150,8 +1149,6 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
     });
 </script>
 
-    
-      
     <script>
         // JavaScript para interatividade
         document.addEventListener('DOMContentLoaded', () => {
@@ -1178,3 +1175,5 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
     </script>
 </body>
 </html>
+
+  
