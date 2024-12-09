@@ -1107,6 +1107,50 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
         document.querySelector('.gift-icon').addEventListener('click', mostrarPopup);
     </script>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const snowContainer = document.createElement("div");
+        snowContainer.style.position = "fixed";
+        snowContainer.style.top = "0";
+        snowContainer.style.left = "0";
+        snowContainer.style.width = "100%";
+        snowContainer.style.height = "100%";
+        snowContainer.style.pointerEvents = "none";
+        snowContainer.style.zIndex = "999";
+        document.body.appendChild(snowContainer);
+
+        function createSnowflake() {
+            const snowflake = document.createElement("div");
+            snowflake.style.position = "absolute";
+            snowflake.style.top = "-10px";
+            snowflake.style.left = Math.random() * 100 + "%";
+            snowflake.style.width = Math.random() * 5 + 5 + "px";
+            snowflake.style.height = snowflake.style.width;
+            snowflake.style.backgroundColor = "#fff";
+            snowflake.style.borderRadius = "50%";
+            snowflake.style.opacity = Math.random();
+            snowflake.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+            snowContainer.appendChild(snowflake);
+
+            snowflake.addEventListener("animationend", function() {
+                snowflake.remove();
+            });
+        }
+
+        setInterval(createSnowflake, 100);
+
+        const style = document.createElement("style");
+        style.innerHTML = `
+            @keyframes fall {
+                0% { transform: translateY(0); }
+                100% { transform: translateY(100vh); }
+            }
+        `;
+        document.head.appendChild(style);
+    });
+</script>
+    
+      
     <script>
         // JavaScript para interatividade
         document.addEventListener('DOMContentLoaded', () => {
