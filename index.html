@@ -1106,8 +1106,7 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
         // Ao clicar no ícone de presente, mostra o popup
         document.querySelector('.gift-icon').addEventListener('click', mostrarPopup);
     </script>
-
-    // neve caindo
+  
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const snowContainer = document.createElement("div");
@@ -1120,7 +1119,12 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
         snowContainer.style.zIndex = "999";
         document.body.appendChild(snowContainer);
 
+        let snowflakesCount = 0; // Contador de flocos visíveis
+        const maxSnowflakes = 20; // Limite máximo de flocos de neve visíveis
+
         function createSnowflake() {
+            if (snowflakesCount >= maxSnowflakes) return; // Não cria se atingir o limite
+
             const snowflake = document.createElement("div");
             snowflake.style.position = "absolute";
             snowflake.style.top = "-10px";
@@ -1130,18 +1134,20 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
             snowflake.style.backgroundColor = "#fff";
             snowflake.style.borderRadius = "50%";
             snowflake.style.opacity = Math.random();
-            // Alteração para cair mais lentamente (10 a 20 segundos)
             snowflake.style.animation = `fall ${Math.random() * 10 + 10}s linear infinite`;
             snowContainer.appendChild(snowflake);
+            snowflakesCount++; // Incrementa o contador de flocos visíveis
 
             // Remove o floco ao final da animação
             snowflake.addEventListener("animationend", function() {
                 snowflake.remove();
+                snowflakesCount--; // Decrementa o contador ao remover o floco
             });
         }
 
-        // Reduzimos a quantidade de flocos criados
-        setInterval(createSnowflake, 1000); // Intervalo maior para menos neve
+        // Cria novos flocos de neve em um intervalo mais espaçado
+        setInterval(createSnowflake, 3000); // 1,5 segundos entre a criação de novos flocos
+
         const style = document.createElement("style");
         style.innerHTML = `
             @keyframes fall {
