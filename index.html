@@ -1106,7 +1106,8 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
         // Ao clicar no ícone de presente, mostra o popup
         document.querySelector('.gift-icon').addEventListener('click', mostrarPopup);
     </script>
-  
+
+    // neve caindo
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const snowContainer = document.createElement("div");
@@ -1129,15 +1130,18 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
             snowflake.style.backgroundColor = "#fff";
             snowflake.style.borderRadius = "50%";
             snowflake.style.opacity = Math.random();
-            snowflake.style.animation = `fall ${Math.random() * 5 + 5}s linear infinite`; // Mais lento
+            // Alteração para cair mais lentamente (10 a 20 segundos)
+            snowflake.style.animation = `fall ${Math.random() * 10 + 10}s linear infinite`;
             snowContainer.appendChild(snowflake);
 
+            // Remove o floco ao final da animação
             snowflake.addEventListener("animationend", function() {
                 snowflake.remove();
             });
         }
 
-        setInterval(createSnowflake, 600); // Frequência ajustada para menor densidade
+        // Reduzimos a quantidade de flocos criados
+        setInterval(createSnowflake, 1000); // Intervalo maior para menos neve
         const style = document.createElement("style");
         style.innerHTML = `
             @keyframes fall {
