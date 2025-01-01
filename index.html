@@ -536,7 +536,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1><!-- aqui ficar um nome maior mais para aparecer tem que apagar tudo aqui dentro de uma seta a outra ai só colocar o seu que vc quiser por exemplo assinatura original --></h1>
-            <p class="texto-borda">Temos mais de 40 assinatura o melhor em entretenimento de streaming premium original das melhores plataformas, se for revender lucro de 100% a 250%</p>
+            <p class="texto-borda">FELIZ 2025, Temos mais de 40 assinatura o melhor em entretenimento de streaming premium original das melhores plataformas para todos gosto</p>
             <a href="#planos">tabela de preços</a><br><br><br><br>
 
     </section>
@@ -599,7 +599,7 @@
         <!-- Disney Premium -->
         <div class="plano">
             <h3>Disney + star + espn</h3>
-            <p class="preco">R$20,00/conta platinum<br>R$13,00/tela platinum<br>R$15,00/conta padrão<br>R$10,00/tela padrão</p>
+            <p class="preco">R$18,00/conta platinum<br>R$12,00/tela platinum<br>R$15,00/conta padrão<br>R$10,00/tela padrão</p>
             <p>Plano platinum ou padrão</p>
             <p>O Disney+ é um serviço de streaming da The Walt Disney Company que oferece uma ampla variedade de conteúdo de entretenimento para todas as idades e todos canais ao vivo espn</p>
             <p>✅ conta pode compartilhar</p>
@@ -612,7 +612,7 @@
         <!-- Max Premium -->
         <div class="plano">
             <h3>Max + discovery + futebol ao vivo</h3>
-            <p class="preco">R$20,00/conta platinum<br>R$13,00/tela platinum<br>R$15,00/conta standard<br>R$10,00/tela standard</p>
+            <p class="preco">R$18,00/conta platinum<br>R$12,00/tela platinum<br>R$15,00/conta standard<br>R$10,00/tela standard</p>
             <p>Plano platinum ou padrão</p>
             <p>A Max é uma plataforma de streaming que oferece uma grande variedade de conteúdo, incluindo filmes, séries, documentários, programas de culinária, reality shows, novelas e muito mais.</p>
             <p>✅ conta pode compartilhar</p>
@@ -1150,21 +1150,18 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
         // Configurando o IntersectionObserver
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
+                const index = Array.from(depoimentos).indexOf(entry.target);
+                const animationClass = index % 2 === 0 ? 'aparece-da-direita' : 'aparece-da-esquerda';
+
                 if (entry.isIntersecting) {
-                    // Identifica se é um depoimento par ou ímpar
-                    const index = Array.from(depoimentos).indexOf(entry.target);
-                    const animationClass = index % 2 === 0 ? 'aparece-da-direita' : 'aparece-da-esquerda';
-
-                    // Remove a classe de animação após a saída da tela
-                    entry.target.addEventListener('animationend', () => {
-                        entry.target.classList.remove(animationClass);
-                    });
-
                     // Adiciona a classe de animação ao entrar na tela
                     entry.target.classList.add(animationClass);
+                } else {
+                    // Remove a classe de animação ao sair da tela
+                    entry.target.classList.remove(animationClass);
                 }
             });
-        }, { threshold: 0.5 }); // Define que o elemento é considerado visível quando 50% está na tela
+        }, { threshold: 0 }); // Detecta quando o elemento entra ou sai completamente da tela
 
         // Observa cada depoimento
         depoimentos.forEach(depoimento => {
