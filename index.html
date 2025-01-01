@@ -156,21 +156,21 @@
             margin-bottom: 30px;
         }
 
-.hero a {
-    padding: 15px 30px;
-    background-color: rgba(28, 191, 31, 0.8);
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(95, 216, 235, 9); /* Inicialmente, sem luz */
-}
+        .hero a {
+            padding: 15px 30px;
+            background-color: rgba(28, 191, 31, 0.8);
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(95, 216, 235, 9); /* Inicialmente, sem luz */
+        }
 
-.hero a:hover {
-    background-color: rgba(28, 191, 31, 0.8);
-    box-shadow: 0 0 20px rgba(95, 216, 235, 0.8), 0 0 40px rgba(95, 216, 235, 0.6); /* Efeito de luz laranja */
-}
+        .hero a:hover {
+            background-color: rgba(28, 191, 31, 0.8);
+            box-shadow: 0 0 20px rgba(95, 216, 235, 0.8), 0 0 40px rgba(95, 216, 235, 0.6); /* Efeito de luz laranja */
+        }
 
         .veja-planos-button {
             padding: 15px 30px;
@@ -320,24 +320,47 @@
             text-align: center;
         }
 
-        #depoimentos {
-            background-color: #000000;
-            padding: 50px;
-            border-radius: 10px;
-            text-align: center;
-        }
+        /* Estilo para a animação de entrada */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-        #depoimentos .depoimento {
-            background-color: #132977;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-        #depoimentos .depoimento p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
+/* Estilo dos depoimentos */
+.depoimento {
+    background-color: #132977;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateX(0); /* Posição inicial */
+    transition: all 0.3s ease;
+}
+
+.depoimento.aparece-da-direita {
+    animation: slideInRight 1s forwards;
+}
+
+.depoimento.aparece-da-esquerda {
+    animation: slideInLeft 1s forwards;
+}
 
         .stars {
             color: #ffcc00;
@@ -458,36 +481,37 @@
             display: flex;
             justify-content: space-evenly;
             margin-top: 20px;        
-        }     
-      
-      .gift-icon {
-    font-size: 54px; /* Ajuste o tamanho conforme necessário */
-    margin-right: 10px; /* Espaço ao lado do ícone, se necessário */
-}
-      
-  /* efeito de luz verdo presente */
-      @keyframes pulse {
-    0% {
-        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff00;
-        transform: scale(1);
-    }
-    50% {
-        text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 160px #00ff00, 0 0 240px #00ff00;
-        transform: scale(1.1);
-    }
-    100% {
-        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff00;
-        transform: scale(1);
-    }
-}
-      .texto-borda { /* O melhor em entretenimento de streaming premium original das melhores plataformas, se for revender lucro de 100% a 250% */
-    color: white; /* Cor do texto */
-    text-shadow: 
-        -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000; /* Cria a borda preta */
-}
+        }
+
+        .gift-icon {
+            font-size: 54px; /* Ajuste o tamanho conforme necessário */
+            margin-right: 10px; /* Espaço ao lado do ícone, se necessário */
+        }
+
+        /* efeito de luz verde do presente */
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff00;
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 160px #00ff00, 0 0 240px #00ff00;
+                transform: scale(1.1);
+            }
+            100% {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff00;
+                transform: scale(1);
+            }
+        }
+
+        .texto-borda { 
+            color: white; 
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000; /* Cria a borda preta */
+        }
     </style>
 </head>
 <body>
@@ -1120,6 +1144,32 @@ REMBOLSO? sou unico do planeta terra que dar rembolso completo com até 20 dias 
     <footer>
         <p>Todos os direitos reservados &copy; 2019-2024 word assine e vpn word net</p>
     </footer>
+
+<script>
+    // Função para monitorar a entrada dos depoimentos na tela
+    document.addEventListener('DOMContentLoaded', () => {
+        const depoimentos = document.querySelectorAll('.depoimento');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Adiciona a classe de animação com base na posição
+                    if (Array.from(depoimentos).indexOf(entry.target) % 2 === 0) {
+                        entry.target.classList.add('aparece-da-direita');
+                    } else {
+                        entry.target.classList.add('aparece-da-esquerda');
+                    }
+                }
+            });
+        }, { threshold: 0.5 }); // Visível quando 50% está na tela
+
+        // Observa cada depoimento
+        depoimentos.forEach(depoimento => {
+            observer.observe(depoimento);
+        });
+    });
+</script>
+
 
     <script>
         // Mostrar popup
